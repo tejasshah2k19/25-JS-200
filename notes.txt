@@ -1,0 +1,49 @@
+JS => Java Script 
+
+1) Lang PL 
+2) is not a JAVA 
+3) browser , console 
+
+
+html -> 
+            java Script 
+
+html ->
+js   -> 
+
+
+
+why ? 
+
+html -> web page -> static ->
+
+
+                HTML
+        CSS             JS 
+        design          dynamic , interactive 
+
+
+plain js -> 
+lib -> node js -> framework ->  
+---------------------------------------------------------------
+two type -> 
+        1) internal js  -> inside html 
+        2) external js  -> new file 
+
+    
+---------------------------------------------------------------
+
+<body>  
+<script> 
+
+
+JS Engine -> 
+
+
+Chrome : V8 
+IE : Chakra 
+FF :  Spider Monkey 
+
+
+brave : chromeium -> 
+---------------------------------------------------------------
