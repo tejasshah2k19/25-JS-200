@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        //how to create function 
+        //
+        function add() {
+            n1 = parseInt(document.calc.n1.value);
+            n2 = parseInt(document.calc.n2.value);
+            choice = document.calc.choice.value;
+
+
+            if (choice == "add") {
+                ans = n1 + n2;
+                document.write(ans);
+            }else if(choice == "sub"){
+                ans = n1- n2; 
+                  document.write(ans);
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+    <form name="calc">
+
+        No1: <input type="number" name="n1" /><br><Br>
+
+        No2: <input type="number" name="n2" /><br><br>
+
+        <input type="button" value="Addition" onclick="add()" />
+    </form>
+
+</body>
+
+</html>
