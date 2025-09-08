@@ -47,3 +47,34 @@ FF :  Spider Monkey
 
 brave : chromeium -> 
 ---------------------------------------------------------------
+1) prompt
+2) form 
+Take marks of three subjects from user 
+                maths sci eng 
+                if maths + sci > 190  print PASS 
+                if maths + eng > 180  print PASS 
+                if perc > 85  Print PASS 
+                other wise 
+                        Try Again 
+
+---------------------------------------------------------------
+
+user input ->
+
+        num = parseInt(prompt("Enter number"));
+
+        form 
+
+                [   ]
+                [   ]
+
+                [submit]        
+---------------------------------------------------------------
+   1) read name gender and age from user 
+                if gender is male and age is greater than 17 print eligible for vote 
+                if gender is female and age is greater than 21 print eligible for vote 
+                other wise print note eligible for vote 
+   
+   2) Take three numbers from user and print greatest of 3. 
+
+---------------------------------------------------------------
