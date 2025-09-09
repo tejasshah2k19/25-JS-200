@@ -78,3 +78,88 @@ user input ->
    2) Take three numbers from user and print greatest of 3. 
 
 ---------------------------------------------------------------
+
+HTML: 
+<body bgColor="yellow">
+</body> 
+
+JS:
+        document.bgColor = "yellow" 
+
+---------------------------------------------------------------
+Comments :-     
+
+C:      
+        single -> // 
+        multi ->  /*   */ 
+
+HTML: 
+        <!--  --> 
+
+
+Js :    
+        single -> //  
+        multi  -> /*  */ 
+----------------------------------------------------------------        
+
+#define SIZE 5
+
+constant 
+
+SIZE = 1 
+
+const int a = 10; //constant variable 
+//fix -> value can not be change 
+
+
+int a = 10;
+a=100;
+a=222;
+
+const int p = 12;
+p=233;//error 
+
+------------------------------------------------------------------------
+
+a =10;
+
+var a;
+let b;
+
+
+var a = 10;
+a =20;
+
+
+let b = 30;
+b = 44;
+
+
+const x = 12;
+x = 100; //error 
+
+
+var let const
+
+-------------------------------------------------------------------------
+2005
+bYear -> age -> 18>= -> eligible for voting ==> bg Color => GREEN 
+      ->  -18 => not eligible for voting => bg color => red 
+
+      
+-------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
