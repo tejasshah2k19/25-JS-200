@@ -149,17 +149,78 @@ bYear -> age -> 18>= -> eligible for voting ==> bg Color => GREEN
       
 -------------------------------------------------------------------------
 
+html -> 
+                <script> 
+
+                type ?
+                        2 
+                                internal { inside the html file }
+                                external { new .js file }
+
+                Comments ?
+                                single  -> // 
+                                multi  ->  /*   */ 
+
+                js variable? 
+                                a = 10; 
+
+                                let 
+                                var 
+                                const 
+
+                                constance variable -> fixed value variable 
+
+                                const x = 10; 
+                                x = 12; //error 
+                                x = x+12; //error 
+
+                                //scope - redefination 
+                                let a = 10;
+                                var b = 20; 
+
+                                a =100;
+                                b = 200;
+
+
+                js case sensitive ? true 
+                                a , A => are not same => 
+
+                how to create a function ?
+                                function 
+                                function myFun(){
+
+                                }
 
 
 
+------------------------------------------------------------------------------------------
+
+       N1.  [  10    ]
+       N2.  [  10    ]
+
+                [submit] 
+
+          20     
 
 
+------------------------------------------------------------------------------------------
+                Registration Form 
+
+                FirstName :
+                LastName :
+                Email :
+                Password :
+                Gender : radio 
+                Address:  text area 
+                City:  drop down 
+                Hobby: check box 
+
+                        [submit]
 
 
+               FirstName : Gabbar  
+               LastName  : Babbar
 
-
-
-
-
-
-
+        
+------------------------------------------------------------------------------------------
+                            
