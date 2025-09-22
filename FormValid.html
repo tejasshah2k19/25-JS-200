@@ -17,7 +17,7 @@
             let city = document.getElementById("city").value;
 
             let hobby = document.getElementsByName("hobby");//hobby[]
-
+            let hobbySum = "";
 
             document.getElementById("firstNamePrint").innerHTML = "<b>First Name : </b>" + fn;
             document.getElementById("lastNamePrint").innerHTML = "<b>Last Name : </b>" + ln;
@@ -32,21 +32,25 @@
             if (gender[1].checked) {
                 document.getElementById("genderPrint").innerHTML = "<b>Gender : </b>" + gender[1].value;
             }
-            document.getElementById("addressPrint").innerHTML = "<b>Address : </b>"+address;
-            document.getElementById("cityPrint").innerHTML = "<b>City : </b>"+city;
+            document.getElementById("addressPrint").innerHTML = "<b>Address : </b>" + address;
+            document.getElementById("cityPrint").innerHTML = "<b>City : </b>" + city;
 
 
-            if(hobby[0].checked){
-                document.getElementById("hobbyPrint").innerHTML = "<b>Hobby : </b>"+hobby[0].value;
+            if (hobby[0].checked) {
+                hobbySum = hobbySum + hobby[0].value;
             }
-            
-            if(hobby[1].checked){
-                document.getElementById("hobbyPrint").innerHTML = "<b>Hobby : </b>"+hobby[1].value;
+
+            if (hobby[1].checked) {
+
+                hobbySum = hobbySum + ","+hobby[1].value;
             }
-            
-            if(hobby[2].checked){
-                document.getElementById("hobbyPrint").innerHTML = "<b>Hobby : </b>"+hobby[2].value;
+
+            if (hobby[2].checked) {
+
+                hobbySum = hobbySum + ","+hobby[2].value;
             }
+            document.getElementById("hobbyPrint").innerHTML = "<b>Hobby : </b>" + hobbySum;
+
         }
     </script>
 </head>
@@ -75,10 +79,10 @@
     </select><br><br>
 
 
-    Hobby : 
-            Whatsapp : <input type="checkbox" name="hobby" value="Whatsapp"/> 
-            Instagram : <input type="checkbox" name="hobby" value="Instagram"/>
-            Coding : <input type="checkbox" name="hobby" value="Coding"/><br><Br> 
+    Hobby :
+    Whatsapp : <input type="checkbox" name="hobby" value="Whatsapp" />
+    Instagram : <input type="checkbox" name="hobby" value="Instagram" />
+    Coding : <input type="checkbox" name="hobby" value="Coding" /><br><Br>
 
     <input type="button" value="Submit" onclick="reg()" />
     <br><br>
