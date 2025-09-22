@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function reg() {
+            let fn = document.getElementById("firstName").value;
+            let ln = document.getElementById("lastName").value;
+            let email = document.getElementById("email").value;
+            let password = document.getElementById("password").value;
+            let gender = document.getElementsByName("gender"); //gender[0] gender[1]    
+            let address = document.getElementById("address").value;
+            let city = document.getElementById("city").value;
+
+            let hobby = document.getElementsByName("hobby");//hobby[]
+
+
+            document.getElementById("firstNamePrint").innerHTML = "<b>First Name : </b>" + fn;
+            document.getElementById("lastNamePrint").innerHTML = "<b>Last Name : </b>" + ln;
+            document.getElementById("emailPrint").innerHTML = "<b>Email : </b>" + email;
+            document.getElementById("passwordPrint").innerHTML = "<b>password : </b>" + password;
+
+            if (gender[0].checked) {
+                document.getElementById("genderPrint").innerHTML = "<b>Gender : </b>" + gender[0].value;
+            }
+
+
+            if (gender[1].checked) {
+                document.getElementById("genderPrint").innerHTML = "<b>Gender : </b>" + gender[1].value;
+            }
+            document.getElementById("addressPrint").innerHTML = "<b>Address : </b>"+address;
+            document.getElementById("cityPrint").innerHTML = "<b>City : </b>"+city;
+
+
+            if(hobby[0].checked){
+                document.getElementById("hobbyPrint").innerHTML = "<b>Hobby : </b>"+hobby[0].value;
+            }
+            
+            if(hobby[1].checked){
+                document.getElementById("hobbyPrint").innerHTML = "<b>Hobby : </b>"+hobby[1].value;
+            }
+            
+            if(hobby[2].checked){
+                document.getElementById("hobbyPrint").innerHTML = "<b>Hobby : </b>"+hobby[2].value;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h2>Registration</h2>
+
+    FirstName : <input type="text" id="firstName" /> <br><br>
+
+    LastName : <input type="text" id="lastName" /> <br><br>
+
+    Email : <input type="text" id="email" /><br><br>
+
+    Password : <input type="password" id="password" /><br><br>
+
+    Gender : Male<input type="radio" name="gender" value="male" />
+    Female <input type="radio" name="gender" value="female" /><br><br>
+
+    Address : <textarea id="address"></textarea><br><Br>
+
+    City : <select id="city">
+        <option>---select city---</option>
+        <option value="Ahmedabad">Ahmedabad</option>
+        <option value="Surat">Surat</option>
+        <option value="Baroda">Baroda</option>
+    </select><br><br>
+
+
+    Hobby : 
+            Whatsapp : <input type="checkbox" name="hobby" value="Whatsapp"/> 
+            Instagram : <input type="checkbox" name="hobby" value="Instagram"/>
+            Coding : <input type="checkbox" name="hobby" value="Coding"/><br><Br> 
+
+    <input type="button" value="Submit" onclick="reg()" />
+    <br><br>
+
+    <div id="firstNamePrint"></div>
+    <div id="lastNamePrint"></div>
+    <div id="emailPrint"></div>
+    <div id="passwordPrint"></div>
+    <div id="genderPrint"></div>
+    <div id="addressPrint"></div>
+    <div id="cityPrint"></div>
+    <div id="hobbyPrint"></div>
+</body>
+
+</html>

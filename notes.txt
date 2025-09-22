@@ -214,7 +214,7 @@ html ->
                 Address:  text area 
                 City:  drop down 
                 Hobby: check box 
-
+                                Whatsapp Instagram Coding 
                         [submit]
 
 
@@ -224,3 +224,5 @@ html ->
         
 ------------------------------------------------------------------------------------------
                             
+id => unique 
+name => repeat 
