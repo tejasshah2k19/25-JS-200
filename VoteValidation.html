@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function voteChecking() {
+            //input 
+            let firstName = document.getElementById("firstName").value;
+            let age = document.getElementById("age").value;
+            let gender = document.getElementsByName("gender");//gender[] 
+
+
+            //process
+            //validation 
+            if(firstName == ""){
+                document.getElementById("firstNameMsg").innerHTML = "Please Enter FirstName";
+            }
+
+            if(age == ""){
+                document.getElementById("ageMsg").innerHTML = "Please Enter Age";
+            }
+
+            if(!gender[0].checked && !gender[1].checked){
+                document.getElementById("genderMsg").innerHTML = "Please Select Gender";
+            }
+
+            //output 
+        }
+    </script>
+</head>
+
+<body>
+    FirstName : <input type="text" id="firstName" />  <span id="firstNameMsg" style="color: red;"></span><br><Br>
+
+    Age : <input type="text" id="age" /><span id="ageMsg" style="color: red;"></span>  <Br><Br>
+
+    Gender : Male<input type="radio" name="gender" /> Female <input type="radio" name="gender" /> <span id="genderMsg" style="color: red;"></span><br><br>
+
+    <input type="button" value="Submit" onclick="voteChecking()" />
+
+</body>
+
+</html>

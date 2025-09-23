@@ -226,3 +226,17 @@ html ->
                             
 id => unique 
 name => repeat 
+------------------------------------------------------------------------------------------
+
+        FirstName  [            ]  Please Enter FirstName 
+        Age        [            ]  Please Enter Age     
+        Gender     Male() Female() Please Select Gender 
+                        [submit]
+
+        gender => male , 18+ => eligible for voting 
+        gender => female , 19+ => eligible for voting 
+        not eligible for voting 
+
+------------------------------------------------------------------------------------------
+
+
