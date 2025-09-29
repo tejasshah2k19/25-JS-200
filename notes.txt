@@ -240,3 +240,53 @@ name => repeat
 ------------------------------------------------------------------------------------------
 
 
+JS -> variable 
+
+
+let  , var , const
+
+
+
+let a = 10; 
+
+
+250 numbers -> how many variables i have to use? 
+
+array --> collections of data 
+
+
+let arr = [ ];
+
+let arr = [1,2,3,4,5];
+
+if you want to access single data item from an array , you need to access using index. 
+index -> start : 0 
+index -> end   : size - 1 
+
+arr -> all 5 values 
+arr[0];
+
+
+in js , array having length keyword that will return size of an array 
+
+arr.length => 5
+
+
+
+
+52
+32
+14
+62
+78
+
+print 3rd element from array {14}
+
+------------------------------------------------------------
+
+take random 10 numbers in array.
+        1) print sum of all numbers in console. 
+        2) find max number from array and print in console. 
+
+
+------------------------------------------------------------
