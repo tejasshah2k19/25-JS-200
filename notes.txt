@@ -290,3 +290,17 @@ take random 10 numbers in array.
 
 
 ------------------------------------------------------------
+let a = [] 
+
+a.push(10);//0
+a.push(20);//1
+
+console.log(a); 
+
+
+
+[Add] -> array insert element 
+[print] -> array print browser 
+[sum] -> sum of all items 
+[max] -> max from array 
+------------------------------------------------------------
