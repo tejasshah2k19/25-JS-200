@@ -40,16 +40,16 @@
 
 
 
-let arr = [33,20,13,9,7,29,49,68,44,15] ; 
+let arr = [33, 20, 13, 9, 7, 29, 49, 68, 44, 15];
 arr.sort(mySort)
 
-function mySort(x,y){
-    if(x > y){
+function mySort(x, y) {
+    if (x > y) {
         return 1;
-    }else if(x < y) {
+    } else if (x < y) {
         return -1;
-    }else{
-        return 0; 
+    } else {
+        return 0;
     }
 }
 
@@ -58,7 +58,7 @@ console.log(arr);
 // -------------------------------------------------------------
 
 
-let myArray = [22,11,55,66,33,99,80,90,10,9,27]
+let myArray = [22, 11, 55, 66, 33, 99, 80, 90, 10, 9, 27]
 
 // for(i=0;i<myArray.length;i++){
 //     console.log(myArray[i]);
@@ -66,22 +66,56 @@ let myArray = [22,11,55,66,33,99,80,90,10,9,27]
 
 // myArray.forEach(x => console.log(x)); 
 console.log(myArray);
-myArray.forEach(x => console.log(x+10)); 
+myArray.forEach(x => console.log(x + 10));
 
 
 //array -> condition -> subarray -> filter 
 
 //150 {apti} {8+} {A}
 
-let oddArray = myArray.filter(x => x%2 !=0 )
+let oddArray = myArray.filter(x => x % 2 != 0)
 
 console.log(oddArray);
 
 // print all  numbers divisible by 3 
-// print all  numbers divisible by 9 
+let arr3 = myArray.filter(x => x % 3 == 0)
 
+// print all  numbers divisible by 9 
+let arr9 = myArray.filter(x => x % 9 == 0)
 
 // print all  numbers divisible by 3 & 9 
+
+let arr39 = myArray.filter(x => x % 3 == 0 && x % 9 == 0)
+
+
+console.log(" 3 => ", arr3);
+console.log(" 9 => ", arr9);
+console.log("3&9 => ", arr39);
+
+
+
+let myArray10 = myArray.map(x => x + 10);
+
+console.log(myArray);
+console.log(myArray10);
+
+
+
+
+let names = ["ram", "shyam", "ganshyam", "ravan", "laxman"];
+
+
+names.forEach(x => console.log(x+":"+x.length))
+
+
+//print all the name from array who's lenght is greater than 5 
+
+let name5 = names.filter( x => x.length > 5 )
+console.log(name5);
+
+
+
+
 
 
 
