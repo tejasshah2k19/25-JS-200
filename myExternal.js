@@ -115,6 +115,11 @@ console.log(name5);
 
 
 
+let abc = [12,3,455,66,7,8,88]
+
+let maxNum  = Math.max(1,2,3,4,44,566,23,3);
+
+let maxNum2 = Math.max(...abc);
 
 
 

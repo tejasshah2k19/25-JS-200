@@ -304,3 +304,14 @@ console.log(a);
 [sum] -> sum of all items 
 [max] -> max from array 
 ------------------------------------------------------------
+
+String -> 
+
+        c: 
+                a = 'x' ; //character 
+                a = "xx" ; //char array -> string 
+
+        js: 
+                a = 'x'  ; // string 
+                a = "xya";  // string 
+---------------------------------------------------------------
