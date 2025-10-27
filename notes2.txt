@@ -159,4 +159,20 @@ console.log("sum => "+sum);
 
 find out the min and max number from array 
 
- 
+---------------------------------------------------------
+
+JS 
+Events -> 
+
+mouse click 
+
+double click
+
+
+drag 
+
+over 
+
+key press . type 
+
+------------------------------------------------------

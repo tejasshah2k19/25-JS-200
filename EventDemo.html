@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <input type="button" value="click" onclick="clickDemo()"/>
+        <br><br> 
+
+     <input type="button" value="Dbl Click" ondblclick="dblClickDemo()" />   
+    <br><br> 
+
+    <input type="button" value="On Mouse Over"  onmouseover="onOverDemo()"/>
+    <Br>
+
+
+        <img src="reportApp1.png" height="400" width="400" onmouseover="onOverDemo()"/>
+
+        <Br><br> 
+
+            <img src="reportApp1.png" height="200" width="200" onmouseout="onMouseOutDemo()"/>
+    
+<script>
+
+    function clickDemo(){
+        alert("button click");
+    }
+
+    function dblClickDemo(){
+        alert("double click");
+    }
+
+    function onOverDemo(){
+        alert("onMouseOver");
+    }
+
+    function onMouseOutDemo(){
+        alert("on mouse out");
+    }
+
+
+</script>
+</body>
+</html>
