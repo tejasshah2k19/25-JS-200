@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Game Over</title>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter:wght@300;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg1: #0f0c29;
+      --bg2: #302b63;
+      --accent: #ff2d55;
+      --accent-2: #ffd166;
+      --glass: rgba(255,255,255,0.06);
+      --glass-2: rgba(255,255,255,0.03);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial}
+    body{
+      display:flex;align-items:center;justify-content:center;
+      background:linear-gradient(135deg,var(--bg1),var(--bg2));
+      color:#fff;padding:24px;
+    }
+
+    .card{
+      width:min(860px,95%);
+      background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+      border-radius:18px;padding:36px;position:relative;overflow:hidden;
+      box-shadow:0 10px 30px rgba(2,6,23,0.6);
+      display:grid;grid-template-columns:1fr 360px;gap:28px;align-items:center;
+      backdrop-filter: blur(6px);
+    }
+
+    /* Neon animated "GAME OVER" */
+    .left{
+      padding:20px 10px;
+    }
+    .title{
+      font-family:'Press Start 2P', monospace;letter-spacing:6px;font-size:44px;margin:0 0 8px;line-height:1;
+      text-transform:uppercase;color:transparent; -webkit-text-stroke: 1px rgba(255,255,255,0.12);
+      background: linear-gradient(90deg, var(--accent), #ff7ab6, var(--accent-2));
+      -webkit-background-clip:text;background-clip:text;
+      position:relative;
+      animation:glow 1.8s ease-in-out infinite;
+    }
+    @keyframes glow{
+      0%{filter:drop-shadow(0 0 6px rgba(255,45,85,0.18))}
+      50%{filter:drop-shadow(0 0 22px rgba(255,200,110,0.22))}
+      100%{filter:drop-shadow(0 0 6px rgba(255,45,85,0.18))}
+    }
+
+    .subtitle{font-size:14px;color:rgba(255,255,255,0.7);margin-bottom:22px}
+
+    .score-card{
+      background: linear-gradient(180deg, rgba(255,255,255,0.025), rgba(255,255,255,0.02));
+      border-radius:12px;padding:18px;border:1px solid rgba(255,255,255,0.04);
+      display:flex;gap:14px;align-items:center;max-width:480px
+    }
+    .score-big{font-family:'Press Start 2P',monospace;font-size:28px}
+    .score-meta{font-size:13px;color:rgba(255,255,255,0.72)}
+
+    /* Right column (actions) */
+    .right{
+      padding:20px;background:linear-gradient(180deg,var(--glass),var(--glass-2));border-radius:12px;height:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;border:1px solid rgba(255,255,255,0.04)
+    }
+    .buttons{display:flex;flex-direction:column;gap:12px;width:100%}
+    .btn{
+      -webkit-appearance:none;appearance:none;border:0;padding:14px 18px;border-radius:10px;font-weight:700;cursor:pointer;font-size:14px;
+      box-shadow:0 6px 18px rgba(2,6,23,0.45);transition:transform .15s ease, box-shadow .15s ease;
+    }
+    .btn:active{transform:translateY(1px)}
+    .btn-primary{
+      background:linear-gradient(90deg,var(--accent),#ff7ab6);color:white
+    }
+    .btn-outline{
+      background:transparent;border:1px solid rgba(255,255,255,0.08);color:rgba(255,255,255,0.9)
+    }
+    .muted{font-size:12px;color:rgba(255,255,255,0.55);margin-top:10px}
+
+    /* Decorative confetti dots */
+    .confetti{
+      position:absolute;inset:0;pointer-events:none;overflow:hidden
+    }
+    .dot{position:absolute;width:8px;height:8px;border-radius:50%;opacity:0.95;transform:translateY(-10vh);animation:fall 3.6s linear infinite}
+    .dot:nth-child(1){left:6%;background:#ff7ab6;animation-delay:0.2s}
+    .dot:nth-child(2){left:20%;background:#ffd166;animation-delay:0.5s}
+    .dot:nth-child(3){left:34%;background:#8be9a4;animation-delay:0.9s}
+    .dot:nth-child(4){left:48%;background:#61dafb;animation-delay:0.3s}
+    .dot:nth-child(5){left:62%;background:#ffb86b;animation-delay:1.1s}
+    .dot:nth-child(6){left:78%;background:#c792ea;animation-delay:0.6s}
+    .dot:nth-child(7){left:88%;background:#f07178;animation-delay:0.8s}
+    @keyframes fall{
+      0%{transform:translateY(-20vh) rotate(0);opacity:0}
+      10%{opacity:1}
+      100%{transform:translateY(120vh) rotate(540deg);opacity:0}
+    }
+
+    /* Responsive */
+    @media (max-width:860px){
+      .card{grid-template-columns:1fr;gap:18px}
+      .title{font-size:28px}
+      .right{order:2}
+    }
+
+    /* small footer */
+    .foot{position:absolute;left:18px;bottom:12px;font-size:12px;color:rgba(255,255,255,0.35)}
+  </style>
+</head>
+<body>
+  <div class="card" role="main">
+    <div class="left">
+      <h1 class="title">Game Over</h1>
+      <p class="subtitle">Better luck next time — but check your score and try to beat it!</p>
+
+      <div class="score-card">
+        <div>
+          <div class="score-big" id="score">0</div>
+          <div class="score-meta">Your score</div>
+        </div>
+        <div style="margin-left:auto;text-align:right">
+          <div style="font-size:13px;color:rgba(255,255,255,0.68)" id="best">Best: --</div>
+          <div style="font-size:11px;color:rgba(255,255,255,0.45)">Level reached: <span id="level">--</span></div>
+        </div>
+      </div>
+
+      <p style="margin-top:18px;color:rgba(255,255,255,0.6);max-width:68%">Tip: Use power-ups more often — they stack and can turn the tide. Click "Play Again" to retry instantly.</p>
+    </div>
+
+    <div class="right" aria-label="Actions">
+      <div class="buttons">
+        <button class="btn btn-primary" id="play">Play Again</button>
+        <button class="btn btn-outline" id="share">Share Score</button>
+        <button class="btn btn-outline" id="menu">Main Menu</button>
+      </div>
+      <div class="muted">Press <kbd>R</kbd> to restart — or use the Play button.</div>
+    </div>
+
+    <div class="confetti" aria-hidden="true">
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+
+    <div class="foot">Made with ❤️ — Customize as needed</div>
+  </div>
+
+  <script>
+    // Sample interactive script: pass score, level via URL params or set them dynamically from game
+    (function(){
+      function qs(name, def){
+        const url = new URL(window.location.href);
+        return url.searchParams.get(name) || def;
+      }
+      const score = parseInt(qs('score', Math.floor(Math.random()*9000)) , 10);
+      const level = qs('level', Math.floor(Math.random()*20)+1);
+      const best = localStorage.getItem('gomax') || 0;
+
+      document.getElementById('score').textContent = score;
+      document.getElementById('level').textContent = level;
+      document.getElementById('best').textContent = 'Best: ' + Math.max(best, score);
+
+      if(score > best){
+        localStorage.setItem('gomax', score);
+        // tiny celebratory pulse
+        document.querySelector('.title').style.transform = 'scale(1.02)';
+        setTimeout(()=>document.querySelector('.title').style.transform = '',350);
+      }
+
+      document.getElementById('play').addEventListener('click', ()=>{
+        // redirect to game (customize href)
+        window.location.href = "GuessNumGame.html";
+      });
+      document.getElementById('menu').addEventListener('click', ()=>{
+        window.location.href = qs('menuUrl', './menu.html');
+      });
+      document.getElementById('share').addEventListener('click', ()=>{
+        const text = `I scored ${score} points! Can you beat me?`;
+        if(navigator.share){
+          navigator.share({title:'My Score',text, url:window.location.href}).catch(()=>{});
+        } else {
+          navigator.clipboard.writeText(text).then(()=>alert('Score copied to clipboard!'));
+        }
+      });
+
+      // keyboard shortcut R to restart
+      window.addEventListener('keydown', e=>{
+        if(e.key.toLowerCase() === 'r') document.getElementById('play').click();
+      });
+    })();
+  </script>
+</body>
+</html>

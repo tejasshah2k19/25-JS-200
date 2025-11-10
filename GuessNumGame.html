@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guess the Number</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Poppins:wght@400;600&display=swap"
+    rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #0f0c29, #302b63);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    h1 {
+      font-family: 'Press Start 2P', monospace;
+      font-size: 2rem;
+      color: #ff2d55;
+      margin-bottom: 20px;
+      text-shadow: 0 0 15px rgba(255, 45, 85, 0.5);
+    }
+
+    .game-box {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 40px;
+      border-radius: 15px;
+      width: 350px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(8px);
+    }
+
+    input[type="text"] {
+      padding: 10px 15px;
+      border: none;
+      border-radius: 8px;
+      width: 100%;
+      text-align: center;
+      font-size: 18px;
+      outline: none;
+      margin-bottom: 15px;
+    }
+
+    input[type="button"] {
+      background: linear-gradient(90deg, #ff2d55, #ff7ab6);
+      border: none;
+      color: white;
+      padding: 12px 20px;
+      border-radius: 10px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.2s ease-in-out;
+      width: 100%;
+      font-size: 16px;
+    }
+
+    input[type="button"]:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(255, 45, 85, 0.5);
+    }
+
+    .lifeline {
+      margin-top: 15px;
+      font-size: 14px;
+      color: #ffd166;
+    }
+
+    footer {
+      position: absolute;
+      bottom: 20px;
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.4);
+    }
+  </style>
+
+  <script>
+    var winningNum = parseInt(Math.random() * 100);
+    var lifeLine = 5;
+
+    function playGame() {
+      let userNum = parseInt(document.getElementById("n1").value);
+      if (isNaN(userNum)) {
+        alert("Please enter a valid number!");
+        return;
+      }
+
+      if (winningNum === userNum) {
+        alert("🎉 Congratulations! You guessed it right!");
+      } else {
+        lifeLine--;
+
+        if (userNum > winningNum) {
+          alert("Your number is greater than the winning number.\nLifeline left: " + lifeLine);
+        } else {
+          alert("Your number is less than the winning number.\nLifeline left: " + lifeLine);
+        }
+
+        document.getElementById("life").textContent = lifeLine;
+
+        if (lifeLine === 0) {
+          location.href = "GameOver.html?score=" + (5 - lifeLine);
+        }
+      }
+
+      document.getElementById("n1").value = "";
+      document.getElementById("n1").focus();
+    }
+  </script>
+</head>
+
+<body>
+  <h1>Guess the Number</h1>
+
+  <div class="game-box">
+    <p>I'm thinking of a number between <b>1 and 100</b>.<br>Can you guess it?</p>
+
+    <input type="text" id="n1" placeholder="Enter your guess..." />
+    <input type="button" value="Check" onclick="playGame()" />
+
+    <div class="lifeline">❤️ Lifelines Left: <span id="life">5</span></div>
+  </div>
+
+  <footer>Made with ❤️ by Tejas Shah</footer>
+</body>
+
+</html>

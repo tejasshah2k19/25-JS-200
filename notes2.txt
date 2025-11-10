@@ -176,3 +176,17 @@ over
 key press . type 
 
 ------------------------------------------------------
+
+button click , double click 
+
+image -> over , out 
+------------------------------------------------------
+
+
+event -> key 
+
+keypress
+keydown
+keyup
+
+
